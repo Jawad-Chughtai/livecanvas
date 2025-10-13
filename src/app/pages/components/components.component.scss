@@ -1,0 +1,28 @@
+.components-container {
+    padding: 2rem;
+    background: var(--color-bg);
+    color: var(--color-text);
+
+    h1 {
+        margin-bottom: 1.5rem;
+    }
+
+    section {
+        margin-bottom: 2rem;
+    }
+    
+    p {
+        margin: 0;
+
+        &.text-light span {
+            background: var(--color-text);
+        }
+    }
+
+    .button-group {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        flex-wrap: wrap;
+    }
+}

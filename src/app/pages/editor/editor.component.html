@@ -1,0 +1,34 @@
+<div class="editor-container">
+  <div class="editors">
+    <div class="editor-section">
+      <h3>HTML</h3>
+      <ngx-monaco-editor
+        [options]="htmlOptions"
+        [(ngModel)]="html"
+        (ngModelChange)="onCodeChange()"
+      ></ngx-monaco-editor>
+    </div>
+
+    <div class="editor-section">
+      <h3>CSS</h3>
+      <ngx-monaco-editor
+        [options]="cssOptions"
+        [(ngModel)]="css"
+        (ngModelChange)="onCodeChange()"
+      ></ngx-monaco-editor>
+    </div>
+
+    <div class="editor-section">
+      <h3>JS</h3>
+      <ngx-monaco-editor
+        [options]="jsOptions"
+        [(ngModel)]="js"
+        (ngModelChange)="onCodeChange()"
+      ></ngx-monaco-editor>
+    </div>
+  </div>
+
+  <div class="preview">
+    <iframe [src]="previewUrl" frameborder="0"></iframe>
+  </div>
+</div>

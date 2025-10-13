@@ -1,1 +1,108 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    --color-primary: #6366f1;
+    --color-secondary: #14b8a6;
+    --color-success: #22c55e;
+    --color-info: #0dcaf0;
+    --color-warning: #f59e0b;
+    --color-danger: #ef4444;
+
+    --color-text: #1f2937;
+    --color-bg: #ffffff;
+
+    --color-border: #e5e7eb;
+}
+
+/* Base styling */
+body {
+    color: var(--color-text);
+    background: var(--color-bg);
+}
+
+/* Base button */
+.app-btn {
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+    color: #fff;
+
+    &.app-btn-primary { background: var(--color-primary); }
+    &.app-btn-secondary { background: var(--color-secondary); }
+    &.app-btn-success { background: var(--color-success); }
+    &.app-btn-info { background: var(--color-info); }
+    &.app-btn-warning { background: var(--color-warning); }
+    &.app-btn-danger { background: var(--color-danger); }
+
+    &:hover { opacity: 0.9; }
+}
+
+/* Outline variants */
+.app-btn-outline-primary,
+.app-btn-outline-secondary,
+.app-btn-outline-success,
+.app-btn-outline-info,
+.app-btn-outline-warning,
+.app-btn-outline-danger {
+    background: transparent;
+    color: var(--color-text);
+    border-color: currentColor;
+}
+
+.app-btn-outline-primary { color: var(--color-primary); }
+.app-btn-outline-secondary { color: var(--color-secondary); }
+.app-btn-outline-success { color: var(--color-success); }
+.app-btn-outline-info { color: var(--color-info); }
+.app-btn-outline-warning { color: var(--color-warning); }
+.app-btn-outline-danger { color: var(--color-danger); }
+
+/* Hover states for outlines */
+.app-btn-outline-primary:hover {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: #fff;
+}
+
+.app-btn-outline-secondary:hover {
+    background: var(--color-secondary);
+    border-color: var(--color-secondary);
+    color: #fff;
+}
+
+.app-btn-outline-success:hover {
+    background: var(--color-success);
+    border-color: var(--color-success);
+    color: #fff;
+}
+
+.app-btn-outline-info:hover {
+    background: var(--color-info);
+    border-color: var(--color-info);
+    color: #fff;
+}
+
+.app-btn-outline-warning:hover {
+    background: var(--color-warning);
+    border-color: var(--color-warning);
+    color: #fff;
+}
+
+.app-btn-outline-danger:hover {
+    background: var(--color-danger);
+    border-color: var(--color-danger);
+    color: #fff;
+}
+
+/* Text color utilities */
+.app-text-primary { color: var(--color-primary) !important; }
+.app-text-secondary { color: var(--color-secondary) !important; }
+.app-text-success { color: var(--color-success) !important; }
+.app-text-info { color: var(--color-info) !important; }
+.app-text-warning { color: var(--color-warning) !important; }
+.app-text-danger { color: var(--color-danger) !important; }
+.app-text-muted { color: var(--color-muted, #6c757d) !important; }
+.app-text-light { color: var(--color-light, #f8f9fa) !important; }
+.app-text-dark { color: var(--color-dark, #212529) !important; }

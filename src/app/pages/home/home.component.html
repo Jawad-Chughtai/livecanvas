@@ -1,0 +1,22 @@
+<div class="home-container">
+  <header class="home-header">
+    <h1>Live Canvas</h1>
+    <button (click)="createProject()">+ New Project</button>
+  </header>
+
+  <div class="project-grid" *ngIf="projects.length; else emptyState">
+    <div
+      class="project-card"
+      *ngFor="let project of projects"
+      (click)="openProject(project.id)"
+    >
+      <h3>{{ project.name }}</h3>
+      <small>{{ project.updatedAt | date:'short' }}</small>
+      <button class="delete-btn" (click)="deleteProject(project.id); $event.stopPropagation()">🗑</button>
+    </div>
+  </div>
+
+  <ng-template #emptyState>
+    <p>No projects yet. Click “New Project” to start!</p>
+  </ng-template>
+</div>
