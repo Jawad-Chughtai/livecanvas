@@ -1,0 +1,34 @@
+.app-footer {
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    font-size: 0.7rem;
+    color: var(--color-muted);
+    border-top: 1px solid var(--color-border);
+    // background-color: rgba(0, 0, 0, 0.05);
+    flex-wrap: wrap;
+}
+
+.footer-links {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    a {
+        font-size: 0.885rem;
+        padding: 0.1rem 0.15rem;
+        border-radius: 0.15rem;
+        border: 1px solid rgba(var(--color-primary), 0.2);
+        color: var(--color-primary);
+        transition: all 0.2s ease;
+    }
+
+    a:hover {
+        background: var(--color-primary);
+        color: var(--color-light);
+        transform: scale(1.1);
+    }
+}

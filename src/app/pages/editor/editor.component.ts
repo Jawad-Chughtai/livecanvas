@@ -1,5 +1,5 @@
 import { Component, inject, OnDestroy, OnInit } from '@angular/core';
-import { SharedModule } from '../../shared/shared/shared.module';
+import { SharedModule } from '../../shared/shared.module';
 import { ActivatedRoute } from '@angular/router';
 import { Project } from '../../models/project.model';
 import { ProjectService } from '../../services/project.service';

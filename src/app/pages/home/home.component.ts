@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../../services/project.service';
 import { Router } from '@angular/router';
 import { Project } from '../../models/project.model';
-import { SharedModule } from '../../shared/shared/shared.module';
+import { SharedModule } from '../../shared/shared.module';
 import { HeroSectionComponent } from "./hero-section/hero-section.component";
 import { ConfirmationService } from '../../shared/lib/swal/confirmation.service';
 import { ToastService } from '../../shared/lib/swal/toaster.service';
