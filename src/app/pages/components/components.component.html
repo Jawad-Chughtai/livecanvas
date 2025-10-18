@@ -5,21 +5,30 @@
     <h2>Buttons</h2>
 
     <div class="button-group">
-      <button class="app-btn app-btn-primary">Primary</button>
-      <button class="app-btn app-btn-secondary">Secondary</button>
-      <button class="app-btn app-btn-success">Success</button>
-      <button class="app-btn app-btn-info">Info</button>
-      <button class="app-btn app-btn-warning">Warning</button>
-      <button class="app-btn app-btn-danger">Danger</button>
+      <app-button color="primary">Primary</app-button>
+      <app-button color="secondary">Secondary</app-button>
+      <app-button color="success">Success</app-button>
+      <app-button color="info">Info</app-button>
+      <app-button color="warning">Warning</app-button>
+      <app-button color="danger">Danger</app-button>
     </div>
 
     <div class="button-group">
-      <button class="app-btn app-btn-outline-primary">Primary</button>
-      <button class="app-btn app-btn-outline-secondary">Secondary</button>
-      <button class="app-btn app-btn-outline-success">Success</button>
-      <button class="app-btn app-btn-outline-info">Info</button>
-      <button class="app-btn app-btn-outline-warning">Warning</button>
-      <button class="app-btn app-btn-outline-danger">Danger</button>
+      <app-button color="primary" [outline]="true">Primary</app-button>
+      <app-button color="secondary" [outline]="true">Secondary</app-button>
+      <app-button color="success" [outline]="true">Success</app-button>
+      <app-button color="info" [outline]="true">Info</app-button>
+      <app-button color="warning" [outline]="true">Warning</app-button>
+      <app-button color="danger" [outline]="true">Danger</app-button>
+    </div>
+
+    <div class="button-group">
+      <app-button color="primary" rounded>Primary</app-button>
+      <app-button color="secondary" rounded>Secondary</app-button>
+      <app-button color="success" rounded>Success</app-button>
+      <app-button color="info" rounded>Info</app-button>
+      <app-button color="warning" rounded>Warning</app-button>
+      <app-button color="danger" rounded>Danger</app-button>
     </div>
   </section>
 

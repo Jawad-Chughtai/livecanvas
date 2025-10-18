@@ -5,6 +5,7 @@ import { ComponentsComponent } from './pages/components/components.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
+    { path: 'editor', component: EditorComponent },
     { path: 'editor/:id', component: EditorComponent },
     { path: 'components', component: ComponentsComponent },
     { path: '**', redirectTo: '' }

@@ -1,0 +1,21 @@
+<nav>
+    <div class="nav-section">
+        <h5 class="navbar-title">
+            <a routerLink="">LiveCanvas</a>
+        </h5>
+
+        <div class="nav-links">
+            <ng-container *ngFor="let navItem of navItems">
+                <div class="nav-link">
+                    <a [routerLink]="navItem.route" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                        {{ navItem.label }}
+                    </a>
+                    <div class="nav-link-border-bottom"></div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+    <div class="nav-section">
+
+    </div>
+</nav>

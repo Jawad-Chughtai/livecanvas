@@ -1,0 +1,33 @@
+.hero-section {
+    height: 100%;
+    margin: 0;
+    position: relative;
+    background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+    min-height: 350px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    text-align: left;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.hero-content {
+    position: relative;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: #ddd;
+}

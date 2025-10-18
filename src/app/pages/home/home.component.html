@@ -1,22 +1,46 @@
-<div class="home-container">
-  <header class="home-header">
-    <h1>Live Canvas</h1>
-    <button (click)="createProject()">+ New Project</button>
-  </header>
-
-  <div class="project-grid" *ngIf="projects.length; else emptyState">
-    <div
-      class="project-card"
-      *ngFor="let project of projects"
-      (click)="openProject(project.id)"
-    >
-      <h3>{{ project.name }}</h3>
-      <small>{{ project.updatedAt | date:'short' }}</small>
-      <button class="delete-btn" (click)="deleteProject(project.id); $event.stopPropagation()">🗑</button>
+<app-hero-section></app-hero-section>
+<div class="container py-4">
+  <div class="d-flex align-items-end justify-content-between projects-header">
+    <h3 class="text-uppercase app-text-muted m-0">Recent Projects</h3>
+    <app-button color="primary" rounded (click)="createProject()">New Project</app-button>
+  </div>
+  <div *ngIf="projects.length; else emptyState">
+    <div class="row row-cols-1 row-cols-md-2 gx-5 projects-grid">
+      <ng-container *ngFor="let project of projects">
+        <div class="col">
+          <div class="card">
+            <div class="card-body" (click)="openProject(project.id)">
+              <div class="d-flex align-items-start justify-content-between flex-wrap">
+                <div>
+                  <h5 class="m-0">{{ project.name }}</h5>
+                  <span class="small app-text-muted">Last Updated: {{ project.updatedAt | date:'short' }}</span>
+                  <div class="d-flex flex-wrap align-items-center gap-2">
+                    <span class="small app-text-muted">Languages Used:</span>
+                    <div *ngIf="project.html" class="language-indicator html">
+                      <span></span> HTML
+                    </div>
+                    <div *ngIf="project.css" class="language-indicator css">
+                      <span></span> CSS
+                    </div>
+                    <div *ngIf="project.js" class="language-indicator js">
+                      <span></span> JS
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <span class="light-border app-btn-outline-danger p-1 rounded-1"
+                    (click)="deleteProject(project.id, $event)">
+                    <i class="fas fa-trash"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
     </div>
   </div>
-
-  <ng-template #emptyState>
-    <p>No projects yet. Click “New Project” to start!</p>
-  </ng-template>
 </div>
+<ng-template #emptyState>
+  <p>No projects yet. Click “New Project” to start!</p>
+</ng-template>
