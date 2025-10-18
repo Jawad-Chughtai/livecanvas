@@ -2,7 +2,7 @@
 <div class="container py-4">
   <div class="d-flex align-items-end justify-content-between projects-header">
     <h3 class="text-uppercase app-text-muted m-0">Recent Projects</h3>
-    <app-button color="primary" rounded (click)="createProject()">New Project</app-button>
+    <app-button color="primary" rounded (click)="createProject()"><i class="fas fa-plus"></i> New Project</app-button>
   </div>
   <div *ngIf="projects.length; else emptyState">
     <div class="row row-cols-1 row-cols-md-2 gx-5 projects-grid">

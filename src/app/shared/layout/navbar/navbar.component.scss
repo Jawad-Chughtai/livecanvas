@@ -1,6 +1,6 @@
 nav {
     padding: 0.75rem 1rem 0.5rem 1rem;
-    background: linear-gradient(90deg, hsla(265, 53%, 29%, 1) 0%, hsla(24, 93%, 73%, 1) 100%);
+    background: linear-gradient(90deg, var(--color-primary) 0, var(--color-secondary) 100%);
     display: flex;
     justify-content: space-between;
     align-items: center;
