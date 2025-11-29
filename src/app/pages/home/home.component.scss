@@ -2,6 +2,9 @@
   padding-bottom: 1.25rem;
   margin-bottom: 1.5rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
 }
 
 .projects-grid {
@@ -41,7 +44,72 @@
       border-radius: 50%;
     }
   }
-  .language-indicator.html span { background: var(--color-danger); }
-  .language-indicator.css span { background: var(--color-info); }
-  .language-indicator.js span { background: var(--color-warning); }
+
+  .language-indicator.html span {
+    background: var(--color-danger);
+  }
+
+  .language-indicator.css span {
+    background: var(--color-info);
+  }
+
+  .language-indicator.js span {
+    background: var(--color-warning);
+  }
+}
+
+/* Recent Projects Responsive */
+@media (max-width: 768px) {
+  .projects-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .projects-header h3 {
+    margin-bottom: 0.5rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  ::ng-deep {
+
+    .projects-header app-button,
+    .projects-header .app-btn {
+      width: 100%;
+    }
+  }
+
+  .projects-grid .card-body {
+    padding: 1rem 1rem;
+  }
+
+  .projects-grid .d-flex.align-items-start.justify-content-between.flex-wrap {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .projects-grid .d-flex.align-items-start.justify-content-between.flex-wrap>div:last-child {
+    align-self: flex-end;
+    /* keep action buttons right-aligned on mobile */
+  }
+
+  .language-indicator {
+    font-size: 0.65rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-header app-button {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .projects-grid .card-body {
+    padding: 0.75rem 1rem;
+  }
+
+  .projects-grid .d-flex.flex-wrap.align-items-center.gap-2 {
+    gap: 0.5rem;
+  }
 }
