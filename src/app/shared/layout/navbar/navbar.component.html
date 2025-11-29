@@ -32,9 +32,17 @@
                     <input class="form-check-input" type="checkbox" role="switch" id="autoRunSwitch"
                         [(ngModel)]="state.autoRun" (ngModelChange)="onStateChange()">
                 </div>
-                <app-button rounded size="sm" color="success" (click)="triggerSave()">
-                    <i class="fas fa-cloud"></i>
-                    Save
+                <app-button rounded size="sm" color="success" (click)="triggerSave()" [disabled]="saving">
+                    <ng-container *ngIf="saving">
+                        <div class="saving">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            Saving...
+                        </div>
+                    </ng-container>
+                    <ng-container *ngIf="!saving">
+                        <i class="fas fa-cloud"></i>
+                        Save
+                    </ng-container>
                 </app-button>
                 <app-button rounded size="sm" color="secondary" (click)="triggerRun()">
                     <i class="fas fa-play"></i>

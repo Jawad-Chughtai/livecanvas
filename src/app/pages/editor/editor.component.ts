@@ -10,7 +10,6 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { EDITOR_CONFIGS } from './editor.constants';
 import { StateService } from '../../services/state.service';
 import { State } from '../../models/state.model';
-import { ToastService } from '../../shared/lib/swal/toaster.service';
 
 @Component({
   selector: 'app-editor',
@@ -37,8 +36,7 @@ export class EditorComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute,
     private projectService: ProjectService,
     private actions: NavbarActionsService,
-    private stateService: StateService,
-    private toastService: ToastService
+    private stateService: StateService
   ) {
     this.state = this.stateService.get();
 
@@ -104,6 +102,5 @@ export class EditorComponent implements OnInit, OnDestroy {
   private saveProject(): void {
     if (!this.project) return;
     this.projectService.update(this.project);
-    this.toastService.success('Changes saved.');
   }
 }

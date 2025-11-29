@@ -31,6 +31,8 @@ export class NavbarComponent {
 
   state = {} as State;
 
+  saving: boolean = false;
+
   constructor() {
     this.isEditor$ = this.router.events.pipe(
       startWith(null),
@@ -40,7 +42,12 @@ export class NavbarComponent {
     this.state = this.stateService.get();
   }
 
-  triggerSave() { this.actions.triggerSave(); }
+  triggerSave() { 
+    this.actions.triggerSave();
+    setTimeout(() => { this.saving = false; }, 500);
+    this.saving = true;
+  }
+
   triggerRun() { this.actions.triggerRun(); }
 
   onStateChange(): void { 

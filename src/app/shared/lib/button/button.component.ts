@@ -13,6 +13,7 @@ export class ButtonComponent {
   @Input() size: 'sm' | '' = '';
   @Input({ transform: booleanAttribute }) outline: boolean = false;
   @Input({ transform: booleanAttribute }) rounded: boolean = false;
+  @Input() disabled: boolean = false;
 
   get buttonClass(): string {
     const className = `app-btn app-btn${this.outline ? '-outline' : ''}-${this.color} ${this.rounded ? 'app-btn-rounded' : ''}`;
