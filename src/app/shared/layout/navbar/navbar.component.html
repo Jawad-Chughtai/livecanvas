@@ -7,7 +7,8 @@
         <div class="nav-links">
             <ng-container *ngFor="let navItem of navItems">
                 <div class="nav-link">
-                    <a [routerLink]="navItem.route" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                    <a [routerLink]="navItem.route" routerLinkActive="active"
+                        [routerLinkActiveOptions]="{ exact: navItem.exact }">
                         {{ navItem.label }}
                     </a>
                     <div class="nav-link-border-bottom"></div>
@@ -16,6 +17,27 @@
         </div>
     </div>
     <div class="nav-section">
-
+        <div class="nav-actions d-flex align-items-center gap-2">
+            <ng-container *ngIf="isEditor$ | async">
+                <div class="form-check form-switch">
+                    <label class="form-check-label text-light" for="autoSaveSwitch">Auto Save</label>
+                    <input class="form-check-input" type="checkbox" role="switch" id="autoSaveSwitch"
+                        [(ngModel)]="state.autoSave" (ngModelChange)="onStateChange()">
+                </div>
+                <div class="form-check form-switch">
+                    <label class="form-check-label text-light" for="autoRunSwitch">Auto Run</label>
+                    <input class="form-check-input" type="checkbox" role="switch" id="autoRunSwitch"
+                        [(ngModel)]="state.autoRun" (ngModelChange)="onStateChange()">
+                </div>
+                <app-button rounded size="sm" color="success" (click)="triggerSave()">
+                    <i class="fas fa-cloud"></i>
+                    Save
+                </app-button>
+                <app-button rounded size="sm" color="secondary" (click)="triggerRun()">
+                    <i class="fas fa-play"></i>
+                    Run Code
+                </app-button>
+            </ng-container>
+        </div>
     </div>
 </nav>

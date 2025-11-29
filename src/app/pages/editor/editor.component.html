@@ -1,34 +1,24 @@
 <div class="editor-container">
   <div class="editors">
-    <div class="editor-section">
-      <h3>HTML</h3>
-      <ngx-monaco-editor
-        [options]="htmlOptions"
-        [(ngModel)]="html"
-        (ngModelChange)="onCodeChange()"
-      ></ngx-monaco-editor>
-    </div>
+    <div class="editor-section" *ngFor="let editor of EDITOR_CONFIGS">
+      <div class="editor-header">
+        <div>
+          <h6>{{ editor.name }}</h6>
+        </div>
+      </div>
 
-    <div class="editor-section">
-      <h3>CSS</h3>
-      <ngx-monaco-editor
-        [options]="cssOptions"
-        [(ngModel)]="css"
-        (ngModelChange)="onCodeChange()"
-      ></ngx-monaco-editor>
-    </div>
-
-    <div class="editor-section">
-      <h3>JS</h3>
-      <ngx-monaco-editor
-        [options]="jsOptions"
-        [(ngModel)]="js"
-        (ngModelChange)="onCodeChange()"
-      ></ngx-monaco-editor>
+      <ngx-monaco-editor [options]="{ theme: 'vs-dark', language: editor.language }" [(ngModel)]="project[editor.field]"
+        (ngModelChange)="onCodeChange()"></ngx-monaco-editor>
     </div>
   </div>
 
+
   <div class="preview">
+    <div class="editor-header">
+      <div>
+        <h6>OUTPUT</h6>
+      </div>
+    </div>
     <iframe [src]="previewUrl" frameborder="0"></iframe>
   </div>
 </div>

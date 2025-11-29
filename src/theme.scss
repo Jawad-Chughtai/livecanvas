@@ -56,6 +56,11 @@ code, pre {
         outline: none;
         box-shadow: none;
     }
+
+    &.app-btn-sm {
+        padding: 0.4rem 1rem;
+        font-size: 0.8rem;
+    }
 }
 
 a.app-btn {
@@ -132,3 +137,9 @@ a.app-btn {
 .app-text-muted { color: var(--color-muted, #6c757d) !important; }
 .app-text-light { color: var(--color-light, #f8f9fa) !important; }
 .app-text-dark { color: var(--color-dark, #212529) !important; }
+
+
+
+.form-check-input:checked {
+  background-color: var(--color-primary);
+}

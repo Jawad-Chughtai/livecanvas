@@ -17,20 +17,12 @@ export class ProjectService {
     return this.load().sort((a, b) => b.updatedAt - a.updatedAt);
   }
 
-  get(id: string): Project | undefined {
-    return this.load().find(p => p.id === id);
+  get(id: string | null): Project | undefined {
+    return id ? this.load().find(p => p.id === id) : undefined;
   }
 
-  create(name: string): Project {
-    const project: Project = {
-      id: crypto.randomUUID(),
-      name,
-      html: '',
-      css: '',
-      js: '',
-      createdAt: Date.now(),
-      updatedAt: Date.now()
-    };
+  create(name: string = 'Untitled'): Project {
+    const project: Project = this.defaultProject(name);
     const projects = this.load();
     projects.push(project);
     this.save(projects);
@@ -49,5 +41,35 @@ export class ProjectService {
   delete(id: string): void {
     const projects = this.load().filter(p => p.id !== id);
     this.save(projects);
+  }
+
+  defaultProject(name: string | undefined = undefined): Project {
+    const project: Project = {
+      id: crypto.randomUUID(),
+      name: name || 'Untitled',
+      html: '',
+      css: '',
+      js: '',
+      createdAt: Date.now(),
+      updatedAt: Date.now()
+    };
+
+    return project;
+  }
+
+  getContent(project: Project): string {
+    const content = `
+      <html>
+        <head>
+          <style>${project.css}</style>
+        </head>
+        <body>
+          ${project.html}
+          <script>${project.js}<\/script>
+        </body>
+      </html>
+    `;
+
+    return content;
   }
 }

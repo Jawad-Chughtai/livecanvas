@@ -1,6 +1,7 @@
 nav {
     padding: 0.75rem 1rem 0.5rem 1rem;
-    background: linear-gradient(90deg, var(--color-primary) 0, var(--color-secondary) 100%);
+    // background: linear-gradient(90deg, var(--color-primary) 0, var(--color-secondary) 100%);
+    background: linear-gradient(90deg, hsla(205, 46%, 10%, 1) 0%, hsla(191, 28%, 23%, 1) 50%, hsla(207, 41%, 27%, 1) 100%);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -48,6 +49,16 @@ nav h5 {
     padding: 0 1rem 0.15rem 1rem;
 }
 
-.nav-link a.active + .nav-link-border-bottom {
-  background: rgba(255, 255, 255, 0.5);
+.nav-link a.active+.nav-link-border-bottom {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.nav-actions div.form-check:first-child {
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    padding-right: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.nav-actions div.form-check:nth-child(2) {
+    margin-right: 0.5rem;
 }
