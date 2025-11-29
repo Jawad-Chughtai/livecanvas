@@ -1,2 +1,2 @@
 # livecanvas
-A canvas for playing with JS in the real time
+Code in HTML, CSS & JS with live preview — build as you imagine.
