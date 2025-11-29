@@ -94,10 +94,13 @@ nav h5 {
         gap: 0.5rem;
     }
 
-    .nav-actions div.form-check:first-child {
+    .nav-actions div.form-check {
         border: none;
         flex: 1 1 40%;
-        border-right: none;
+    }
+
+    .nav-actions div.form-check:first-child {
+        border: none;
     }
 
     ::ng-deep {
