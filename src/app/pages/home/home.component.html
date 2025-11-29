@@ -28,6 +28,10 @@
                   </div>
                 </div>
                 <div>
+                  <span class="light-border app-btn-outline-info p-1 rounded-1 me-2"
+                    (click)="editProjectName(project, $event)">
+                    <i class="fas fa-edit"></i>
+                  </span>
                   <span class="light-border app-btn-outline-danger p-1 rounded-1"
                     (click)="deleteProject(project.id, $event)">
                     <i class="fas fa-trash"></i>

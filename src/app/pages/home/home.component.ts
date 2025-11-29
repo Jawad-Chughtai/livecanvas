@@ -41,6 +41,18 @@ export class HomeComponent implements OnInit {
       });
   }
 
+  editProjectName(project: Project, event: MouseEvent): void {
+    event.stopPropagation();
+    this.confirmationService
+      .prompt('Update Project Name', 'Please specify the project name', project.name)
+      .subscribe((name: string | null) => {
+        if (!name) return;
+        project.name = name;
+        this.projectService.update(project);
+        this.toastService.success('Project name updated successfully.');
+      });
+  }
+
   deleteProject(id: string, event: MouseEvent): void {
     event.stopPropagation();
     this.confirmationService
